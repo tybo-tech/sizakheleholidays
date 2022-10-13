@@ -1,0 +1,113 @@
+<!-- <app-banner-widget [heading]="heading"></app-banner-widget> -->
+
+<div class="section" *ngIf="item">
+  <div class="container">
+    <h3>
+      Details
+    </h3>
+    <div class="row _home">
+
+
+      <div class="form-item col-md-6">
+        <label for=""> Name*</label>
+        <input class="form-control" type="text" [(ngModel)]="item.Name">
+      </div>
+
+      <div class="form-item col-md-6">
+        <label for=""> Price*</label>
+        <input class="form-control" type="number" [(ngModel)]="item.Price">
+      </div>
+
+
+
+
+      <div class="form-item col-md-6">
+        <label for=""> Total number of days</label>
+        <input class="form-control" type="tel" [(ngModel)]="item.Quantity">
+      </div>
+
+
+
+      <div class="form-item col-md-6">
+        <label for="">Short Description</label>
+
+        <textarea class="form-control" [(ngModel)]="item.ItemSubCategory"></textarea>
+      </div>
+
+      <div class="form-item col-md-12">
+        <label for="">Full Description</label>
+        <quill-editor [styles]="editorStyle" [modules]="editorConfig" [(ngModel)]="item.Description">
+
+        </quill-editor>
+      </div>
+
+
+      <!-- <div class="form-item col-md-6">
+        <label for=""> Status*</label>
+    
+        <select class="form-control" name="" id="" [(ngModel)]="item.ItemStatus">
+          <option value="Published">Published</option>
+          <option value="Draft">Draft</option>
+          <option value="Deleted">Deleted</option>
+        </select>
+      </div>
+    
+      <div class="form-item col-md-6">
+        <label for=""> Category*</label>
+    
+        <select  class="form-control" name="" id="" [(ngModel)]="item.ItemCategory">
+          <option value="All skin types">All skin types</option>
+          <option value="Normal-skin & sensitive-skin">Normal-skin & sensitive-skin</option>
+          <option value="Oily-skin & Combination-skin">Oily-skin & Combination-skin</option>
+          <option value="Sensitive-skin & oily-skin">Sensitive-skin & oily-skin</option>
+          <option value="Sensitive-skin & normal-skin">Sensitive-skin & normal-skin</option>
+          <option value="Other">Other</option>
+        </select>
+      </div> -->
+
+
+    </div>
+    <h3>Images</h3>
+    <div class="row _home">
+      <div class="col-md-6">
+        <div class="form-item col-md-6">
+          <label for=""> Image 1</label>
+          <app-image-widget [image]="item.ImageUrl" (imageChangedEvent)="onImageChangedEvent($event)">
+          </app-image-widget>
+
+        </div>
+
+
+
+      </div>
+
+      <div class="col-md-6">
+        <div class="form-item col-md-6">
+          <label for=""> Image 2</label>
+          <app-image-widget [image]="item.ImageUrl2" (imageChangedEvent)="onImageChangedEvent2($event)">
+          </app-image-widget>
+
+        </div>
+      </div>
+      <div class="col-md-6">
+
+        <div class="form-item col-md-6">
+          <label for=""> Image 3</label>
+          <app-image-widget [image]="item.ImageUrl3" (imageChangedEvent)="onImageChangedEvent3($event)">
+          </app-image-widget>
+
+        </div>
+
+      </div>
+    </div>
+
+    <br>
+
+    <button class="btn btn-primary" [disabled]="!item.Name || !item.Price" (click)="save()">Save </button>
+    <button class="btn btn-primary mr-2" (click)="back()">Back</button>
+
+  </div>
+</div>
+
+
+<app-feedback [message]="message" [routeTo]="'s'" *ngIf="message"></app-feedback>

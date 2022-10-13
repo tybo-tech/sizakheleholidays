@@ -1,0 +1,33 @@
+<div class="container-fluid">
+    <div class="container">
+        <div class="_nav">
+            <div class="_logo">
+                <a routerLink="/">
+                    <img src="assets/images/logo.png" alt="Sizakhele logo">
+                </a>
+            </div>
+
+            <div class="_phone_menu">
+                <button class="btn btn-primary" (click)="showMenu = true">
+                    <i class="bi bi-list"></i>
+                </button>
+
+                <div class="_phone_menu_items" *ngIf="showMenu">
+                    <div class="close" (click)="showMenu = false"><i class="bi bi-x-lg"></i></div>
+                    <ul>
+                        <li *ngFor="let item of items"  (click)="showMenu = false">
+                            <a [routerLink]="item.Url">{{item.Name}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="_nav-items">
+                <ul>
+                    <li *ngFor="let item of items">
+                        <a [routerLink]="item.Url">{{item.Name}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,82 @@
+<app-banner [title]="'Our community'"></app-banner>
+<div class="section">
+    <div class="container">
+
+        <div class="row _home">
+
+            <div class="col-md-12">
+                <!-- <img src="assets/images/about.png" alt="The sunset capetown nice view, travel"> -->
+
+            </div>
+            <br><br>
+            <br><br>
+            <div class="col-md-12 v-center">
+                <p>
+                    Sizakhele Holidays believes that we are only as useful as the communities around us and it is for
+                    this reason that we donate a percentage of our profits to a number of charitable organizations
+                    making a difference in the communities that we visit and beyond. The GLOBE foundation was formed in
+                    2016 as a means of giving back to communities in Southern Africa.
+                </p>
+                <p>
+
+                    If you would like to be part of this unique way of making travel more socially conscious either as a
+                    donor or as a volunteer, please enquire below:
+
+                </p>
+
+                <div class="row form">
+                    <div class="form-item col-md-6">
+                        <label for="name">Your Name *</label>
+                        <input class="form-control" type="text" [(ngModel)]="name" placeholder="">
+                    </div>
+
+                    <div class="form-item col-md-6">
+                        <label for="name">Your Email *</label>
+                        <input class="form-control" type="email" [(ngModel)]="email" placeholder="">
+                    </div>
+
+                    <div class="form-item col-md-6">
+                        <label for="name">Phonenumber (Optional)</label>
+                        <input class="form-control" type="tel" [(ngModel)]="phone" placeholder="">
+                    </div>
+                    <div class="form-item col-md-6">
+                        <label for="name">Choose Volunteer/Donate *</label>
+                        <select class="form-control" [(ngModel)]="actionType" placeholder="">
+                            <option [value]="item" *ngFor="let item of ['Volunteer', 'Donate']">{{item}} </option>
+                        </select>
+                    </div>
+
+                    <div class="form-item col-md-12">
+                        <label for="name">Message *</label>
+                        <textarea class="form-control" [(ngModel)]="massage" placeholder="">
+
+                  </textarea>
+                    </div>
+                    <div class="form-item">
+
+
+                        <button class="btn btn-primary" [disabled]="!name || !email || !phone || !massage" type="button"
+                            (click)="sendEmail()">
+                            Send Message
+                        </button>
+
+                        <button class="btn btn-primary" type="button" (click)="back()">
+                            Back
+                        </button>
+
+                    </div>
+
+
+                    <p *ngIf="!name || !email || !phone || !massage" class="error">
+
+                        Please fill all the fields with * to complete your inquiry.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>

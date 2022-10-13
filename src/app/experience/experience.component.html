@@ -1,0 +1,27 @@
+<div class="section" *ngIf="item">
+    <div class="container">
+        <div class="row _home">
+
+            <div class="col-md-6">
+                <img [src]="item.ImageUrl" class="mb-3" alt="The sunset capetown nice view, travel">
+                <img [src]="item.ImageUrl" class="mb-3" alt="The sunset capetown nice view, travel">
+                <img [src]="item.ImageUrl" class="mb-3" alt="The sunset capetown nice view, travel">
+
+            </div>
+
+            <div class="col-md-6 v-center">
+                <h2>
+                  {{item.Name}}
+                </h2>
+                <h5 *ngIf="item.Price" class="card-title"> {{item.Price | currency:'$'}}</h5>
+                <button class="btn btn-primary" style="margin: 2rem 0;" (click)="enquire()">Enquire Now </button>
+                <p [innerHTML]="item.Description">
+                   
+                </p>
+
+                <button class="btn btn-primary" (click)="enquire()">Enquire Now</button>
+            </div>
+
+        </div>
+    </div>
+</div>

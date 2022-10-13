@@ -1,0 +1,30 @@
+<app-banner [title]="'Our values'"></app-banner>
+
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p class="w-50 p-2">
+                    We pride ourselves on providing a fully immersive travel experience which is both unique and
+                    localized to enhance the traveller experience and this ethos is communicated throughout our branding
+                    and company values. Our core values are:
+                </p>
+                <br>
+                <br>
+            </div>
+        </div>
+        <div class="row">
+
+
+            <div class="col-md-6" *ngFor="let item of items">
+                <div class="card">
+                    <!-- <img [src]="item.Dp" class="card-img-top" alt="..."> -->
+                    <div class="card-body">
+                        <h5 class="card-title">{{item.Name}}</h5>
+                        <p class="card-text">{{item.Data}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

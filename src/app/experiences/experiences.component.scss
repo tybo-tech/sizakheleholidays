@@ -1,0 +1,30 @@
+.card {
+    border-radius: 0;
+    margin-top: 4rem;
+}
+.card-img-top {
+    border-radius: 0;
+}
+.section {
+    background: #ffffff;
+    // padding: 8rem 0;
+    padding-bottom: 5rem;
+}
+
+.btn-primary {
+    margin: 2rem 0;
+}
+
+
+img {
+    object-fit: cover;
+}
+
+@media (min-width: 1281px) {
+    .card {
+        flex-direction: row;
+    }
+    .card img {
+        width: 30%;
+    }
+}

@@ -1,0 +1,117 @@
+.container-fluid {
+    background: #fff;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 20;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+.container {
+    max-width: 90%;
+    @media only screen and (max-width: 600px) {
+        max-width: 100%;
+    }
+}
+._nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    ._logo {
+        img {
+            width: 8rem;
+            @media only screen and (max-width: 600px) {
+                left: -1rem;
+                position: relative;
+            }
+        }
+    }
+
+    ._nav-items {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        @media only screen and (max-width: 600px) {
+            display: none;
+        }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            li {
+                display: inline-block;
+
+                a {
+                    display: block;
+                    cursor: pointer;
+                    padding: 0 0.5rem;
+                    text-transform: uppercase;
+                    font-weight: 800;
+                    font-size: 0.7rem;
+                    color: rgb(39, 4, 4);
+                }
+            }
+        }
+    }
+}
+
+._phone_menu {
+    display: none;
+    @media only screen and (max-width: 600px) {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        //    background: red;
+        .btn {
+            margin: 0 !important;
+            background: #fff;
+            color: #855c30;
+            font-size: 2rem;
+            padding: 0 !important;
+            width: fit-content !important;
+            left: -1rem;
+            position: relative;
+            &:hover {
+                background: #fff !important;
+            }
+        }
+    }
+}
+
+._phone_menu_items {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 80%;
+    background: #fff;
+    z-index: 100;
+    height: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        li {
+            display: block;
+
+            a {
+                display: block;
+                cursor: pointer;
+                padding: 1rem 0.5rem;
+                text-transform: uppercase;
+                font-weight: 800;
+                font-size: 1.2rem;
+                color: rgb(39, 4, 4);
+            }
+        }
+    }
+
+    .close {
+        display: flex;
+        justify-content: flex-end;
+        font-size: 1.5rem;
+    }
+}

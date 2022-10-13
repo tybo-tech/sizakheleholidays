@@ -1,0 +1,75 @@
+<app-banner [title]="'Enquiry '"></app-banner>
+<div class="section">
+    <div class="container">
+
+        <div class="row _home">
+
+            <div class="col-md-12">
+                <!-- <img src="assets/images/about.png" alt="The sunset capetown nice view, travel"> -->
+
+            </div>
+            <br><br>
+            <br><br>
+            <div class="col-md-12 v-center">
+                <h4 *ngIf="actionType">{{actionType}}</h4>
+                <h5 *ngIf="item">From {{item.Price | currency: '$'}}</h5>
+         <p>
+            Thank you for enquiring with Sizakhele Holidays about your next awesome travel experience!
+         </p>
+
+                <div class="row form">
+                    <div class="form-item col-md-6">
+                        <label for="name">Your Name *</label>
+                        <input class="form-control" type="text" [(ngModel)]="name" placeholder="">
+                    </div>
+
+                    <div class="form-item col-md-6">
+                        <label for="name">Your Email *</label>
+                        <input class="form-control" type="email" [(ngModel)]="email" placeholder="">
+                    </div>
+
+                    <div class="form-item col-md-6">
+                        <label for="name">Phonenumber (Optional)</label>
+                        <input class="form-control" type="tel" [(ngModel)]="phone" placeholder="">
+                    </div>
+                    <div class="form-item col-md-6" *ngIf="experiences && experiences.length">
+                        <label for="name">Choose experience*</label>
+                        <select class="form-control" [(ngModel)]="actionType" placeholder="">
+                            <option [value]="item.Name" *ngFor="let item of experiences">{{item.Name}} </option>
+                        </select>
+                    </div>
+
+                    <div class="form-item col-md-12">
+                        <label for="name">Message *</label>
+                        <textarea class="form-control" [(ngModel)]="massage" placeholder="">
+
+                  </textarea>
+                    </div>
+                    <div class="form-item">
+
+
+                        <button class="btn btn-primary" [disabled]="!name || !email || !phone || !massage" type="button"
+                            (click)="sendEmail()">
+                            Send Message
+                        </button>
+
+                        <button class="btn btn-primary" type="button" (click)="back()">
+                            Back
+                        </button>
+
+                    </div>
+
+
+                    <p *ngIf="!name || !email || !phone || !massage" class="error">
+
+                        Please fill all the fields with * to complete your inquiry.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>

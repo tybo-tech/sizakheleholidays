@@ -1,0 +1,17 @@
+img {
+    width: 80%;
+    @media only screen and (max-width: 600px) {
+        width: 100%;
+        margin-bottom: 3rem;
+    }
+}
+
+.section {
+    background: #fff4e8;
+    padding: 4rem 0;
+    min-height: auto;
+}
+
+.s1 {
+    background: #fff;
+}

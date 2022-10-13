@@ -1,0 +1,17 @@
+.section {
+    background: #fff;
+    padding-top: 2rem;
+    min-height: auto;
+    padding: 7rem 0;
+}
+
+.card {
+    margin-bottom: 2rem;
+    min-height: 15rem;
+    img {
+        filter: grayscale(100%);
+        &:hover {
+            filter: grayscale(0);
+        }
+    }
+}

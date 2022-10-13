@@ -1,0 +1,105 @@
+<app-banner [title]="'Contact us'"></app-banner>
+<div class="section">
+  <div class="container">
+    <div class="row _home">
+
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"><i class="bi bi-envelope"></i></h5>
+            <p class="card-text"><a href="mailto:Info@Sizakheleholidays.co.za">Info@Sizakheleholidays.co.za</a></p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"><i class="bi bi-house-door"></i></h5>
+            <p class="card-text">512 Cedar Lakes Estate, Cedar Road, Johannesburg, 2169, ZA</p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"><i class="bi bi-phone"></i></h5>
+            <p class="card-text">
+              <a href="tel:071 763 7044">071 763 7044</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row _home">
+
+      <div class="col-md-12">
+        <!-- <img src="assets/images/about.png" alt="The sunset capetown nice view, travel"> -->
+
+      </div>
+      <br><br>
+      <br><br>
+      <div class="col-md-12 v-center">
+        <h2>
+          Get in touch
+        </h2>
+
+        <p>
+          If you have any questions, just fill in the contact form, and we will answer you shortly.
+
+
+        </p>
+
+        <div class="row form">
+          <div class="form-item col-md-4">
+            <label for="name">Your Name *</label>
+            <input class="form-control" type="text" [(ngModel)]="name" placeholder="">
+          </div>
+
+          <div class="form-item col-md-4">
+            <label for="name">Your Email *</label>
+            <input class="form-control" type="email" [(ngModel)]="email" placeholder="">
+          </div>
+
+          <div class="form-item col-md-4">
+            <label for="name">Phonenumber (Optional)</label>
+            <input class="form-control" type="tel" [(ngModel)]="phone" placeholder="">
+          </div>
+
+          <div class="form-item col-md-12">
+            <label for="name">Message *</label>
+            <textarea class="form-control" [(ngModel)]="massage" placeholder="">
+
+                  </textarea>
+          </div>
+          <div class="form-item">
+
+
+            <button class="btn btn-primary" [disabled]="!name || !email || !phone || !massage" type="button"
+              (click)="sendEmail()">
+              Send Message
+            </button>
+
+            <button class="btn btn-primary" type="button" (click)="back()">
+              Back
+            </button>
+
+          </div>
+
+
+          <p *ngIf="!name || !email || !phone || !massage" class="error">
+
+            Please fill all the fields with * to complete your inquiry.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+  </div>
+</div>

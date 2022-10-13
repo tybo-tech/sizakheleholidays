@@ -1,0 +1,35 @@
+.container-fluid {
+    background: #855c30;
+    overflow: hidden;
+    height: 80vh;
+    position: relative;
+    img {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 50%;
+        object-fit: cover;
+        z-index: 1;
+    }
+}
+.container{
+    max-width: 90%;
+}
+._home {
+    height: 80vh;
+}
+
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    gap: 1rem;
+    .btn-primary{
+        // border: 2px solid #fff;
+        color: #fff;
+        width: 55%;
+    }
+}

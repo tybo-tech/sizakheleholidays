@@ -1,0 +1,35 @@
+<div class="section" *ngIf="experiences">
+
+    <div class="container">
+        <h2>
+            Our top experiences
+        </h2>
+
+        <button class="btn btn-danger btn-green mr-2" style="margin: 3rem 0;" (click)="add()"
+            *ngIf="user && user.UserType == 'Admin'">Add experience</button>
+
+        <div class="row _home">
+
+            <div class="col-md-12" *ngFor="let item of experiences" (click)="goto(item)">
+                <div class="card">
+                    <img [src]="item.Icon" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"> {{item.Name}}</h5>
+                        <h5 class="card-title"> {{item.Price | currency:'$'}}</h5>
+                        <p class="card-text"> {{item.Description}}</p>
+                        <button class="btn btn-primary">View details</button>
+                        <button *ngIf="user && user.UserType == 'Admin'" class="btn btn-danger mr-2" type="button"
+                            [disabled]="item.Quantity < 1" (click)="add(item)">
+                            Edit
+                        </button>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+        <br><br>
+        <a routerLink="/our-experiences" class="btn btn-primary">View all experiences </a>
+    </div>
+</div>
